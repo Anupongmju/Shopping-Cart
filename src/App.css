@@ -1,0 +1,39 @@
+/* ตัวอย่างการใช้ Tailwind CSS */
+.container {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-button {
+  background-color: #ff9800;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.product-list {
+  margin-top: 1rem;
+}
+
+.product-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.add-to-cart-btn {
+  background-color: #4caf50;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.shopping-cart {
+  margin-top: 2rem;
+}

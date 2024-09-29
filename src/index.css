@@ -1,0 +1,355 @@
+/* styles.css */
+
+/* รูปแบบทั่วไป */
+body {
+  background-image: url('https://www.shutterstock.com/image-vector/cat-paws-fishbone-pattern-seamless-600nw-2285351209.jpg');
+  background-size: cover; /* ปรับขนาดของรูปให้ครอบคลุมทั้งหน้า */
+  background-position: center; /* จัดตำแหน่งรูปให้อยู่กึ่งกลาง */
+  /* background-repeat: no-repeat;  */
+  height: 100vh; /* ตั้งค่าให้สูงเต็มหน้าจอ */
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* คอนเทนเนอร์ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #ffffff;
+  color: rgb(255, 255, 255);
+  width: 100%; /* ทำให้เต็มความกว้าง */
+  box-sizing: border-box; /* นับ padding ในความกว้าง */
+  margin: 0; /* ลบ margin */
+}
+
+
+/* ปุ่มตะกร้าสินค้า */
+.cart-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* รายการสินค้า */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* สินค้าแต่ละรายการ */
+.product-item {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+/* รูปภาพสินค้า */
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ราคา */
+.product-price {
+  font-size: 1.25rem;
+  color: #28a745;
+  margin: 10px 0;
+}
+
+/* ตะกร้าสินค้า */
+.cart-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 300px;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%); /* ซ่อน */
+  transition: transform 0.3s ease;
+  padding: 20px;
+}
+
+.cart-popup.open {
+  transform: translateX(0); /* แสดง */
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-header .close {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* ฟุตเตอร์ตะกร้า */
+.cart-footer {
+  margin-top: 20px;
+}
+/* CSS สำหรับ Shopping Cart แบบสไลด์ออก */
+.shopping-cart {
+  position: fixed;
+  top: 0;
+  right: -100%; /* เริ่มต้นอยู่ด้านนอก */
+  width: 300px;
+  height: 100%;
+  background-color: #f5f5f5;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  transition: right 0.4s ease-in-out; /* สร้างการเปลี่ยนตำแหน่ง */
+  z-index: 1000; /* ให้แน่ใจว่า cart อยู่บนสุด */
+}
+
+.shopping-cart.open {
+  right: 0; /* เมื่อเปิดให้เลื่อนออกมา */
+}
+/* Container styles */
+.container {
+  font-family: 'American Typewriter', sans-serif;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.cart-button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-button:hover {
+  background-color: #e65b50;
+}
+
+/* Shopping cart styles */
+.shopping-cart {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 400px; /* กำหนดความกว้างของ shopping cart */
+  height: 100vh; /* กำหนดความสูงเต็มหน้าจอ */
+  background-color: white; /* สีพื้นหลัง */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* เงาด้านข้าง */
+  overflow-y: auto; /* เปิดการเลื่อนแนวตั้งเมื่อสินค้าล้น */
+  z-index: 1000; /* ให้ cart อยู่ด้านหน้า */
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.shopping-cart.open {
+  transform: translateX(0);
+}
+
+.shopping-cart:not(.open) {
+  transform: translateX(100%);
+}
+
+.shopping-cart h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cart-items {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.cart-item-info h4 {
+  font-size: 1rem;
+  color: #555;
+}
+
+.cart-item-info p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-button {
+  background-color: #b78c88;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.quantity-button:hover {
+  background-color: #e65b50;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.cart-summary h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.cart-summary p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Button styles */
+.checkout-button {
+  width: 100%;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: #e65b50;
+}
+.shop-title {
+  color: #000000; /* กำหนดสีให้กับข้อความ "Cat Shop" */
+  font-size: 40px; /* ปรับขนาดตัวอักษร */
+  font-weight: bold; /* ปรับตัวหนา */
+  text-align: center; /* จัดตำแหน่งกลาง */
+  margin: 0;
+  padding: 10px 0;
+}
+.shop2-title {
+  color: #000000; /* กำหนดสีให้กับข้อความ "Cat Shop" */
+  font-size: 10px; /* ปรับขนาดตัวอักษร */
+  font-weight: bold; /* ปรับตัวหนา */
+  text-align: center; /* จัดตำแหน่งกลาง */
+  margin: 0;
+  padding: 10px 0;
+}
+.discount-notice {
+  font-size: 10px; /* ขนาดฟอนต์ */
+  color: #ff5733; /* สีข้อความ */
+  margin-top: 5px; /* เว้นระยะด้านบนจาก "Cat Shop" */
+  text-align: center; /* จัดตำแหน่งข้อความกลาง */
+}
+.announcement-banner {
+  background-color: #ffcc00; /* สีพื้นหลัง */
+  color: #333; /* สีข้อความ */
+  padding: 10px; /* เพิ่มระยะห่างภายใน */
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+  font-weight: bold; /* ตัวอักษรหนา */
+  border-radius: 5px; /* ทำให้มุมโค้งมน */
+  margin: 10px 0; /* ระยะห่างบน-ล่าง */
+}
+/* จัดการ header */
+.header {
+  background-color: #ffffff; /* สีพื้นหลังบาร์ด้านบน */
+  color: white; /* สีข้อความในบาร์ */
+  padding: 20px; /* เพิ่มระยะห่าง */
+  display: flex;
+  justify-content: space-between; /* จัดให้ปุ่มกับชื่ออยู่ด้านข้าง */
+  align-items: center;
+}
+
+.shop-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* จัดการป้ายประกาศ */
+.announcement-banner {
+  background-color: #ffcc00; /* สีพื้นหลังป้าย */
+  color: #333; /* สีข้อความ */
+  padding: 15px; /* ระยะห่างภายใน */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  font-weight: bold; /* ตัวหนา */
+  border-radius: 5px; /* ขอบโค้งมน */
+  margin: 20px 0; /* เพิ่มระยะห่างจากด้านบนและล่าง */
+}
+
+/* ปุ่ม Cart */
+.cart-button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cart-button:hover {
+  background-color: #ff4500;
+}
+
+/* เพิ่ม CSS สำหรับเลื่อนใน Shopping Cart */
+.shopping-cart {
+  max-height: 400px; /* กำหนดความสูงสูงสุดให้เลื่อน */
+  overflow-y: auto; /* ทำให้สามารถเลื่อนลงได้ */
+}
